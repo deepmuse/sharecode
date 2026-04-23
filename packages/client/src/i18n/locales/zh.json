@@ -1,0 +1,64 @@
+{
+  "common": {
+    "copySuccess": "已复制到剪贴板",
+    "retry": "重试",
+    "refresh": "刷新",
+    "language": "语言",
+    "brand": "ShareCode"
+  },
+  "create": {
+    "title": "ShareCode",
+    "subtitle": "粘贴码，一键生成分享链接",
+    "inputLabel": "输入码（每行一个）",
+    "placeholder": "CODE_A\nCODE_B\nCODE_C",
+    "codeCount": "{{count}} 个码（最多 1000 个）",
+    "expireLabel": "有效期（小时）",
+    "submitBtn": "生成分享链接",
+    "submitting": "创建中...",
+    "errorEmpty": "请输入至少一个码",
+    "errorFailed": "创建失败",
+    "successTitle": "创建成功",
+    "successDesc": "共 {{total}} 个码，有效期至 {{expiresAt}}",
+    "claimUrlLabel": "领取链接",
+    "manageUrlLabel": "管理链接（请妥善保管）",
+    "createNew": "创建新的分享"
+  },
+  "claim": {
+    "title": "领取码",
+    "subtitle": "点击下方按钮领取一个码",
+    "claimBtn": "领取一个码",
+    "claiming": "领取中...",
+    "successMsg": "你获得了以下码",
+    "remainCount": "剩余 {{count}} 个",
+    "copyCode": "复制码",
+    "exhausted": "码已被领完",
+    "expired": "链接已过期",
+    "notFound": "分享不存在",
+    "error": "发生错误"
+  },
+  "manage": {
+    "title": "领取统计",
+    "total": "总数",
+    "claimed": "已领取",
+    "remain": "剩余",
+    "progressLabel": "领取进度",
+    "expiresAt": "过期时间：{{time}}",
+    "detailTitle": "领取明细",
+    "detailDesc": "已领取 {{count}} 个",
+    "noRecords": "暂无领取记录",
+    "missingToken": "缺少管理凭证",
+    "fetchFailed": "获取统计失败"
+  },
+  "error": {
+    "invalidParams": "参数不合法",
+    "emptyCodes": "码列表为空",
+    "exceedLimit": "超出创建上限",
+    "shareNotFound": "分享不存在",
+    "shareExpired": "链接已过期",
+    "codesExhausted": "码已领完",
+    "rateLimited": "请求过于频繁，请稍后再试",
+    "internalError": "服务内部错误",
+    "invalidToken": "管理凭证无效",
+    "badRequest": "请求体格式错误"
+  }
+}

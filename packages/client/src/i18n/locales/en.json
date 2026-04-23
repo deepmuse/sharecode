@@ -1,0 +1,64 @@
+{
+  "common": {
+    "copySuccess": "Copied to clipboard",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "language": "Language",
+    "brand": "ShareCode"
+  },
+  "create": {
+    "title": "ShareCode",
+    "subtitle": "Paste codes, generate a share link instantly",
+    "inputLabel": "Enter codes (one per line)",
+    "placeholder": "CODE_A\nCODE_B\nCODE_C",
+    "codeCount": "{{count}} codes (max 1000)",
+    "expireLabel": "Expiration (hours)",
+    "submitBtn": "Generate Share Link",
+    "submitting": "Creating...",
+    "errorEmpty": "Please enter at least one code",
+    "errorFailed": "Failed to create",
+    "successTitle": "Created Successfully",
+    "successDesc": "{{total}} codes, expires at {{expiresAt}}",
+    "claimUrlLabel": "Claim Link",
+    "manageUrlLabel": "Manage Link (keep it safe)",
+    "createNew": "Create New Share"
+  },
+  "claim": {
+    "title": "Claim a Code",
+    "subtitle": "Click the button below to claim a code",
+    "claimBtn": "Claim a Code",
+    "claiming": "Claiming...",
+    "successMsg": "You received the following code",
+    "remainCount": "{{count}} remaining",
+    "copyCode": "Copy Code",
+    "exhausted": "All codes have been claimed",
+    "expired": "This link has expired",
+    "notFound": "Share not found",
+    "error": "An error occurred"
+  },
+  "manage": {
+    "title": "Claim Statistics",
+    "total": "Total",
+    "claimed": "Claimed",
+    "remain": "Remaining",
+    "progressLabel": "Claim Progress",
+    "expiresAt": "Expires: {{time}}",
+    "detailTitle": "Claim Details",
+    "detailDesc": "{{count}} claimed",
+    "noRecords": "No claim records yet",
+    "missingToken": "Missing management token",
+    "fetchFailed": "Failed to load statistics"
+  },
+  "error": {
+    "invalidParams": "Invalid parameters",
+    "emptyCodes": "Code list is empty",
+    "exceedLimit": "Exceeded maximum limit",
+    "shareNotFound": "Share not found",
+    "shareExpired": "This link has expired",
+    "codesExhausted": "All codes have been claimed",
+    "rateLimited": "Too many requests, please try again later",
+    "internalError": "Internal server error",
+    "invalidToken": "Invalid management token",
+    "badRequest": "Invalid request body format"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "common": {
+    "copySuccess": "クリップボードにコピーしました",
+    "retry": "再試行",
+    "refresh": "更新",
+    "language": "言語",
+    "brand": "ShareCode"
+  },
+  "create": {
+    "title": "ShareCode",
+    "subtitle": "コードを貼り付けて、共有リンクを一瞬で生成",
+    "inputLabel": "コードを入力（1行に1つ）",
+    "placeholder": "CODE_A\nCODE_B\nCODE_C",
+    "codeCount": "{{count}}件のコード（最大1000件）",
+    "expireLabel": "有効期限（時間）",
+    "submitBtn": "共有リンクを生成",
+    "submitting": "作成中...",
+    "errorEmpty": "コードを1つ以上入力してください",
+    "errorFailed": "作成に失敗しました",
+    "successTitle": "作成完了",
+    "successDesc": "合計{{total}}件のコード、有効期限：{{expiresAt}}",
+    "claimUrlLabel": "受取リンク",
+    "manageUrlLabel": "管理リンク（大切に保管してください）",
+    "createNew": "新しい共有を作成"
+  },
+  "claim": {
+    "title": "コードを受け取る",
+    "subtitle": "下のボタンをクリックしてコードを受け取る",
+    "claimBtn": "コードを受け取る",
+    "claiming": "受け取り中...",
+    "successMsg": "以下のコードを受け取りました",
+    "remainCount": "残り{{count}}件",
+    "copyCode": "コードをコピー",
+    "exhausted": "コードはすべて受け取られています",
+    "expired": "このリンクは期限切れです",
+    "notFound": "共有が見つかりません",
+    "error": "エラーが発生しました"
+  },
+  "manage": {
+    "title": "受け取り統計",
+    "total": "合計",
+    "claimed": "受け取り済み",
+    "remain": "残り",
+    "progressLabel": "受け取り進捗",
+    "expiresAt": "有効期限：{{time}}",
+    "detailTitle": "受け取り明細",
+    "detailDesc": "{{count}}件受け取り済み",
+    "noRecords": "受け取り記録はまだありません",
+    "missingToken": "管理トークンがありません",
+    "fetchFailed": "統計の取得に失敗しました"
+  },
+  "error": {
+    "invalidParams": "パラメータが不正です",
+    "emptyCodes": "コードリストが空です",
+    "exceedLimit": "制限を超えています",
+    "shareNotFound": "共有が見つかりません",
+    "shareExpired": "このリンクは期限切れです",
+    "codesExhausted": "コードはすべて受け取られています",
+    "rateLimited": "リクエストが多すぎます。後でもう一度お試しください",
+    "internalError": "サーバー内部エラー",
+    "invalidToken": "管理トークンが無効です",
+    "badRequest": "リクエスト形式が不正です"
+  }
+}
