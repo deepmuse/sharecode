@@ -146,7 +146,101 @@ pnpm --filter server start
 - `http://localhost:3001`
 - `http://localhost:3001/api/health`
 
-## 6. 生产环境建议
+## 6. 打包后上传部署（推荐单机生产）
+
+适用于“本地打包，服务器只解压运行”的场景。
+
+### 6.1 本地生成部署包
+
+在项目根目录执行：
+
+```bash
+pnpm package:release
+```
+
+产物为：
+
+- `release/sharecode-server.tar.gz`
+
+该压缩包已包含：
+
+- 后端运行文件（`dist`）
+- 后端生产依赖（`node_modules`）
+- 前端构建静态资源（`public`）
+- 环境变量模板（`.env.example`）
+
+### 6.2 上传到服务器
+
+示例（Linux 服务器）：
+
+```bash
+scp release/sharecode-server.tar.gz user@your-server:/opt/sharecode/
+```
+
+### 6.3 服务器解压与启动
+
+```bash
+cd /opt/sharecode
+mkdir -p app
+tar -xzf sharecode-server.tar.gz -C app
+cd app
+cp .env.example .env
+```
+
+按实际域名和 Redis 地址修改 `.env`（尤其 `APP_URL`、`API_URL`、`REDIS_URL`）。
+
+启动服务：
+
+```bash
+node dist/app.js
+```
+
+建议使用 `pm2` 或 `systemd` 守护进程。
+
+### 6.4 用 systemd 托管（示例）
+
+创建 `/etc/systemd/system/sharecode.service`：
+
+```ini
+[Unit]
+Description=ShareCode Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/sharecode/app
+ExecStart=/usr/bin/node /opt/sharecode/app/dist/app.js
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/sharecode/app/.env
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
+```
+
+生效并启动：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable sharecode
+sudo systemctl start sharecode
+sudo systemctl status sharecode
+```
+
+### 6.5 更新流程（上传新包）
+
+```bash
+cd /opt/sharecode
+cp app/.env app/.env.bak
+rm -rf app
+mkdir -p app
+tar -xzf sharecode-server.tar.gz -C app
+cp app/.env.bak app/.env
+sudo systemctl restart sharecode
+```
+
+## 7. 生产环境建议
 
 - 反向代理（Nginx/Caddy）
   - 将 80/443 转发到 `app:3001`
@@ -159,7 +253,7 @@ pnpm --filter server start
   - 应用与 Redis 分离部署
   - Redis 开启持久化（AOF/RDB）与监控告警
 
-## 7. 升级流程
+## 8. 升级流程
 
 ```bash
 git pull
@@ -172,7 +266,7 @@ docker compose up -d --build
 docker compose up -d --build app
 ```
 
-## 8. 故障排查
+## 9. 故障排查
 
 ### 8.1 页面可访问但接口报错
 
@@ -194,11 +288,12 @@ docker compose logs -f app
 - 执行 `docker compose config` 检查编排文件
 - 执行 `docker compose logs` 查看具体错误
 
-## 9. 当前打包验证结果
+## 10. 当前打包验证结果
 
 已在项目中执行并通过：
 
 - `pnpm build`
+- `pnpm package:release`
 - `docker compose config`
 
 说明当前项目可完成前后端打包，且 Docker Compose 配置有效。
